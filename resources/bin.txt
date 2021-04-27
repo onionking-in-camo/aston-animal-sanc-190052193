@@ -1,0 +1,35 @@
+    
+    public function approve(Request $request) 
+    {
+        $id = $request->input('id');
+
+        $approved = AdoptionRequest::find($id);
+        $approved->status = 'accepted';
+        $approved->save();
+
+        $approved_animal_id = $approved->animal->id;
+        $approved_animal = Animal::find($approved_animal_id);
+        $approved_animal->status = 'unavailable';
+        $approved_animal->save();
+
+        $denied = AdoptionRequest::all()->where('animal_id', $approved_animal_id)
+                                        ->where('user_id', '!=', $approved->user->id)
+                                        ->where('status', '!=', 'denied');
+        foreach ($denied as $req) {
+            $req->status = 'denied';
+            $req->save();
+        }
+
+        return redirect('adoptions');
+    }
+
+    public function deny(Request $request) 
+    {
+        $id = $request->input('id');
+
+        $denied = AdoptionRequest::find($id);
+        $denied->status = 'denied';
+        $denied->save();
+
+        return redirect('adoptions');
+    }
