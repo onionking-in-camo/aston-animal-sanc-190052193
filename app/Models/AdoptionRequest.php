@@ -18,7 +18,7 @@ class AdoptionRequest extends Model
     }
 
     public function isPending() {
-        return $this->attributes['status'] == 'pending';
+        return $this->attributes['status'] === 'pending';
     }
 
     public function hasUpdated() {
