@@ -24,8 +24,8 @@ class AnimalsTableSeeder extends Seeder
         'Xia', 'Yella', 'Zapp'];
 
         $suffix = [' the Great', ' the Wise', ' Belly', ' Tantrum', ' Claws', ' the Cat',
-        'Whiskers', ', Catnip Dealer', ', M.D.', ', Esq.', ' XII', ' III', ' Reaper',
-        ' the Impaler', ' in Disguise'];
+        ' Whiskers', ', Catnip Dealer', ', M.D.', ', Esq.', ' XII', ' III', ' Reaper',
+        ' the Impaler', ' in Disguise', ' Cutiekins'];
 
         $names = array();
         for ($i = 0; $i < 10; $i++) {
@@ -37,7 +37,7 @@ class AnimalsTableSeeder extends Seeder
                 'name' => $faker->unique()->randomElement($names),
                 'DOB' => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'description' => $faker->text($maxNbChars = 256),
-                'status' => $faker->randomElement($array = array('available', 'unavailable'))
+                'status' => 'available'
             ]);
         }
     }
