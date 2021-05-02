@@ -25,9 +25,6 @@
                 <td class="align-middle"> {{ $req['created_at']->toDayDateTimeString() }} </td>
                 <td class="align-middle">
                   @if ($req->isPending())
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-md-6">
                           <form method="POST" 
                             action="{{ route('adoptions.update') }}"
                             enctype="multipart/form-data"
@@ -35,10 +32,8 @@
                             @csrf
                             <input type="hidden" name="id" value="{{ $req['id'] }}"/>
                             <input type="hidden" name="action" value="approve"/>
-                            <input type="submit" class="btn btn-success w-100" value="Approve"/>
+                            <button type="submit" class="btn btn-success w-100 mt-1 mb-1">Approve</button>
                           </form>
-                        </div>
-                        <div class="col-md-6">
                           <form method="POST"
                             action="{{ route('adoptions.update') }}"
                             enctype="multipart/form-data"
@@ -46,11 +41,8 @@
                             @csrf
                             <input type="hidden" name="id" value="{{ $req['id'] }}"/>
                             <input type="hidden" name="action" value="deny"/>
-                            <input type="submit" class="btn btn-danger w-100" value="Deny"/>
+                            <button type="submit" class="btn btn-danger w-100 mt-1 mb-1">Deny</button>
                           </form>
-                        </div>
-                      </div>
-                    </div>
                   @else
                     {{ $req['status'] }}
                   @endif
