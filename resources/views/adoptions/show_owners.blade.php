@@ -9,10 +9,10 @@
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th> Ref
-                <th> Animal       </th>
-                <th> Owner        </th>
-                <th> Adopted Date </th>
+                <th class="sortable pointer"> Ref
+                <th class="sortable pointer"> Animal       </th>
+                <th class="sortable pointer"> Owner        </th>
+                <th class="sortable pointer"> Adopted Date </th>
               </tr>
             </thead>
             <tbody>
@@ -31,4 +31,8 @@
     </div>
   </div>
 </div>
+@endsection
+@section('unique_js')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="{{ asset('js/sort_table.js') }}"></script>
 @endsection

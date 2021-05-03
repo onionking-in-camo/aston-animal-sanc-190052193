@@ -7,15 +7,16 @@
       <div class="card">
         <div class="card-header"> All animals </div>
         <div class="card-body">
-          <table class="table table-bordered table-striped sortable">
+          <div id="sort_info"></div>
+          <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th> Name          </th>
-                <th> D.O.B           </th>
-                <th> Age           </th>
-                <th> Description   </th>
-                <th> Availability  </th>
-                <th> Action        </th>
+                <th class="sortable pointer"> Name </th>
+                <th> D.O.B </th>
+                <th class="sortable pointer"> Age </th>
+                <th> Description </th>
+                <th class="sortable pointer"> Availability </th>
+                <th> Action </th>
               </tr>
             </thead>
             <tbody>
@@ -41,4 +42,8 @@
     </div>
   </div>
 </div>
+@endsection
+@section('unique_js')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="{{ asset('js/sort_table.js') }}"></script>
 @endsection

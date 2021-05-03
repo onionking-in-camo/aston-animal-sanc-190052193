@@ -7,7 +7,7 @@
       <div class="card">
         <div class="card-header"> All adoption requests </div>
         <div class="card-body">
-          <table class="table table-bordered table-striped" id="data_table">
+          <table class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th> User          </th>
