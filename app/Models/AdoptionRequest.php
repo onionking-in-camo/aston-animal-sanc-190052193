@@ -9,6 +9,12 @@ class AdoptionRequest extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'animal_id',
+        'user_id',
+        'status'
+    ];
+
     public function user() {
         return $this->belongsTo('App\Models\User');
     }

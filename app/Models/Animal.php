@@ -10,6 +10,14 @@ class Animal extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'DOB',
+        'description',
+        'image',
+        'status'
+    ];
+
     /** 
      * returns a string representation of the D.O.B. attribute
      * where '01/01/2000' would present as 'Jan 1, 2000'      
